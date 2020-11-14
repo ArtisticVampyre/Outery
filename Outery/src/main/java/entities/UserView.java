@@ -1,11 +1,11 @@
 package entities;
 
 public class UserView {
-    private String id;
+    private Long id;
     private String username;
     private String userProfileImage;
 
-    public UserView(String id, String username, String userProfileImage) {
+    public UserView(Long id, String username, String userProfileImage) {
         this.id = id;
         this.username = username;
         this.userProfileImage = userProfileImage;
