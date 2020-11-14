@@ -10,4 +10,12 @@ public class UserView {
         this.username = username;
         this.userProfileImage = userProfileImage;
     }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public String getUserProfileImage() {
+        return userProfileImage;
+    }
 }
