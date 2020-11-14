@@ -1,11 +1,12 @@
-package entities;
+package com.dev.Outery.entities;
 
-import enums.AccountStats;
-import enums.ProfileType;
-import enums.UserRole;
+import com.dev.Outery.enums.AccountStats;
+import com.dev.Outery.enums.ProfileType;
+import com.dev.Outery.enums.UserRole;
 
 import java.util.Date;
 import java.util.HashMap;
+import java.util.List;
 
 
 public class User {
@@ -17,6 +18,7 @@ public class User {
     // Other profile data
     private Date accountCreationTime;
     private Date userBirthDate;
+    private String description;
     private String secondName;
     private String firstName;
     private String country;
@@ -26,8 +28,8 @@ public class User {
     private ProfileType profileType;
     private UserRole userRole;
     // Link Data
-    private HashMap<String,User> followers;
-    private HashMap<String,User> following;
+    private List<User> followers;
+    private List<User> following;
     // Entry data
     private EntryWall userEntries;
     private EntryWall userWall;
@@ -42,8 +44,8 @@ public class User {
         this.email = email;
     }
 
-    public void followUser(User targetUser){
-        this.following.put(targetUser.getUsername(),targetUser);
+    public void followUser(User targetUser) {
+        //
     }
 
     public String getUsername() {

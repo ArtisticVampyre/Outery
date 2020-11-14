@@ -1,4 +1,4 @@
-package utility;
+package com.dev.Outery.utility;
 
 import java.util.Date;
 

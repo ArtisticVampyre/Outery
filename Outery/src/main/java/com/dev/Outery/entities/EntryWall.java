@@ -1,4 +1,4 @@
-package entities;
+package com.dev.Outery.entities;
 
 import java.util.HashMap;
 

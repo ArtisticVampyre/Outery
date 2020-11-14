@@ -1,4 +1,4 @@
-package entities;
+package com.dev.Outery.entities;
 
 public class UserView {
     private Long id;

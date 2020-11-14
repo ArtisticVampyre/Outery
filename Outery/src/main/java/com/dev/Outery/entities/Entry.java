@@ -1,7 +1,10 @@
-package entities;
+package com.dev.Outery.entities;
+
+import com.dev.Outery.enums.Reactions;
 
 import java.sql.Time;
 import java.util.HashMap;
+import java.util.List;
 
 public class Entry {
     // Basic entry data
@@ -11,6 +14,7 @@ public class Entry {
     private String textData;
     private Time postTime;
     // Interaction related data
-    private HashMap<Object,Entry> comments;
-    private HashMap<Enum,Entry> reactions;
+    private List<Entry> comments;
+    private List<EntryReaction> reactions;
+
 }
