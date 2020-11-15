@@ -1,11 +1,27 @@
 package com.dev.Outery.entities;
 
+import javax.persistence.*;
 import java.util.HashMap;
-
+import java.util.List;
+@Entity
 public class EntryWall {
-    private HashMap<Object,Entry> entryContainer;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
-    public EntryWall(HashMap<Object, Entry> entryContainer) {
+    @OneToMany()
+    private List<Entry> entryContainer;
+
+    public EntryWall(Long id, List<Entry> entryContainer) {
+        this.id = id;
         this.entryContainer = entryContainer;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 }

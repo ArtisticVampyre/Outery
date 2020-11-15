@@ -1,2 +1,10 @@
-package com.dev.Outery.repository;public interface UserRepository {
+package com.dev.Outery.repository;
+
+import com.dev.Outery.entities.User;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+@Repository
+public interface UserRepository extends JpaRepository<User,Long> {
+
 }
