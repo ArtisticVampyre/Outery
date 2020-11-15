@@ -16,6 +16,9 @@ public class EntryWall {
         this.id = id;
         this.entryContainer = entryContainer;
     }
+    public EntryWall(){
+
+    }
 
     public Long getId() {
         return id;
