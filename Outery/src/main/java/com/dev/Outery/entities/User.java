@@ -4,55 +4,58 @@ import com.dev.Outery.enums.AccountStats;
 import com.dev.Outery.enums.ProfileType;
 import com.dev.Outery.enums.UserRole;
 
+import javax.persistence.*;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 
-
+@Entity
+@Table(name="User")
 public class User {
     // Base profile data
-    private String userProfileImage;
-    private String username;
-    private String password;
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+
+
+
+    private String username;
+
+    private String password;
+
+    private String userProfileImage;
+
     // Other profile data
-    private Date accountCreationTime;
+    @Temporal()
+    private Date accountCreation;
+    @Temporal()
     private Date userBirthDate;
+
     private String description;
-    private String secondName;
+
+    private String lastName;
+
     private String firstName;
+
     private String country;
+
     private String email;
     // Enums
+
     private AccountStats accountStats;
+
     private ProfileType profileType;
+
     private UserRole userRole;
     // Link Data
+    @OneToMany()
     private List<User> followers;
+    @OneToMany()
     private List<User> following;
     // Entry data
     private EntryWall userEntries;
     private EntryWall userWall;
 
-
-    public User(String username, String password, Date userBirthDate, String secondName, String firstName, String email) {
-        this.username = username;
-        this.password = password;
-        this.userBirthDate = userBirthDate;
-        this.secondName = secondName;
-        this.firstName = firstName;
-        this.email = email;
-    }
-
-    public void followUser(User targetUser) {
-        //
-    }
-
-    public String getUsername() {
-        return username;
-    }
-
-    public void setUsername(String username) {
-        this.username = username;
-    }
 }
