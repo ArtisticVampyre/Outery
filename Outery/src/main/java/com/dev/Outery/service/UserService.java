@@ -2,9 +2,8 @@ package com.dev.Outery.service;
 
 import com.dev.Outery.dto.UserDTO;
 import com.dev.Outery.entities.User;
-import com.dev.Outery.enums.AccountStats;
-import com.dev.Outery.enums.UserRole;
 import com.dev.Outery.repository.UserRepository;
+import com.dev.Outery.transformers.UserTransformer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -15,16 +14,11 @@ import java.util.List;
 public class UserService {
     @Autowired
     private UserRepository userRepository;
+    @Autowired
+    private UserTransformer userTransformer;
 
     public void addUser(UserDTO userDTO){
-        User user = new User();
-        user.setCountry(userDTO.getCountry());
-        user.setEmail(userDTO.getEmail());
-        user.setAccountStats(AccountStats.ACTIVE);
-        user.setFirstName(userDTO.getFirstName());
-        user.setLastName(userDTO.getLastName());
-        user.setUserBirthDate(userDTO.getUserBirthDate());
-        user.setUserRole(UserRole.GENERAL);
+        User user = userTransformer.convertDTOToEntity(userDTO);
         userRepository.save(user);
     }
 
@@ -32,22 +26,7 @@ public class UserService {
         List<User> userList = userRepository.findAll();
         List<UserDTO> userDTOList = new ArrayList<>();
         for (User user: userList) {
-            UserDTO userDTO = new UserDTO();
-            userDTO.setAccountCreation(user.getAccountCreation());
-            userDTO.setAccountStats(user.getAccountStats());
-            userDTO.setUserBirthDate(user.getUserBirthDate());
-            userDTO.setProfileType(user.getProfileType());
-            userDTO.setId(user.getId());
-            userDTO.setUserRole(user.getUserRole());
-            userDTO.setFollowing(user.getFollowing());
-            userDTO.setFollowers(user.getFollowers());
-            userDTO.setDescription(user.getDescription());
-            userDTO.setPassword(user.getPassword());
-            userDTO.setCountry(user.getCountry());
-            userDTO.setUsername((user.getUsername()));
-            userDTO.setFirstName(user.getFirstName());
-            userDTO.setLastName(user.getLastName());
-            userDTO.setEmail(user.getEmail());
+            UserDTO userDTO = userTransformer.convertEntityToDTO(user);
             userDTOList.add(userDTO);
         }
         return userDTOList;
