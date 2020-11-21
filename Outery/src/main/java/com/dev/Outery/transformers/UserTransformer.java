@@ -9,6 +9,8 @@ import com.fasterxml.jackson.databind.util.BeanUtil;
 import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Component;
 
+import java.util.Date;
+
 @Component
 public class UserTransformer {
     public User convertDTOToEntity(UserDTO userDTO){
@@ -22,6 +24,7 @@ public class UserTransformer {
         user.setPassword(userDTO.getPassword());
         user.setUserBirthDate(userDTO.getUserBirthDate());
         user.setUserRole(UserRole.GENERAL);
+        user.setAccountCreation(new Date());
         return user;
     }
 

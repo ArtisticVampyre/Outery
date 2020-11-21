@@ -47,6 +47,7 @@ public class UserService {
         entryEntity.setCreator(user.getId());
         entryEntity.setPostTime(new Date());
         user.getUserEntries().getEntryContainer().add(entryEntity);
+        // save?
     }
 
 }
