@@ -27,4 +27,12 @@ public class EntryWall {
     public void setId(Long id) {
         this.id = id;
     }
+
+    public List<Entry> getEntryContainer() {
+        return entryContainer;
+    }
+
+    public void setEntryContainer(List<Entry> entryContainer) {
+        this.entryContainer = entryContainer;
+    }
 }

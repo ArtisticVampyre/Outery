@@ -26,4 +26,5 @@ public class EntryWallDTO {
     public void setEntryContainer(List<Entry> entryContainer) {
         this.entryContainer = entryContainer;
     }
+
 }

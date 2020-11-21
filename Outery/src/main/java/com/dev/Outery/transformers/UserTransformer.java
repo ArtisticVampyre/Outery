@@ -18,6 +18,8 @@ public class UserTransformer {
         user.setAccountStats(AccountStats.ACTIVE);
         user.setFirstName(userDTO.getFirstName());
         user.setLastName(userDTO.getLastName());
+        user.setUsername(userDTO.getUsername());
+        user.setPassword(userDTO.getPassword());
         user.setUserBirthDate(userDTO.getUserBirthDate());
         user.setUserRole(UserRole.GENERAL);
         return user;
