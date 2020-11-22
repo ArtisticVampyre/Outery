@@ -65,6 +65,8 @@ public class UserService {
         User userFollowed = userFollowedOptional.get();
         userFollowing.addFollowing(userFollowed);
         userFollowed.addFollower(userFollowing);
+        userRepository.save(userFollowed);
+        userRepository.save(userFollowing);
     }
 
 }

@@ -38,9 +38,9 @@ public class UserController {
         return ResponseEntity.ok(HttpStatus.OK);
     }
 
-    @PostMapping("/api/followUserRequest/{followedId}")
-    public ResponseEntity addFollower(@PathVariable("followedId") Long followedId,@RequestBody UserDTO follower){
-        userService.addFollower(follower,followedId);
+    @PostMapping("/api/followUser/{id}")
+    public ResponseEntity addFollower(@PathVariable("id") Long id,@RequestBody UserDTO follower){
+        userService.addFollower(follower,id);
         return ResponseEntity.ok(HttpStatus.OK);
     }
 }
