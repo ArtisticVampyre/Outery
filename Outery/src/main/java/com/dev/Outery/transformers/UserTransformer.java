@@ -2,6 +2,7 @@ package com.dev.Outery.transformers;
 
 import com.dev.Outery.dto.UserDTO;
 import com.dev.Outery.entities.Entry;
+import com.dev.Outery.entities.EntryWall;
 import com.dev.Outery.entities.User;
 import com.dev.Outery.enums.AccountStats;
 import com.dev.Outery.enums.UserRole;
@@ -25,6 +26,7 @@ public class UserTransformer {
         user.setUserBirthDate(userDTO.getUserBirthDate());
         user.setUserRole(UserRole.GENERAL);
         user.setAccountCreation(new Date());
+        user.setUserEntries(new EntryWall());
         return user;
     }
 

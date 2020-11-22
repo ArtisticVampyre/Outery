@@ -2,6 +2,7 @@ package com.dev.Outery.dto;
 
 import com.dev.Outery.entities.Entry;
 import com.dev.Outery.entities.EntryReaction;
+import com.dev.Outery.entities.User;
 import com.dev.Outery.enums.EntryType;
 
 import java.util.Date;
@@ -14,9 +15,9 @@ public class EntryDTO {
 
     private EntryType entryType;
 
-    private Long ownerId;
+    private User owner;
 
-    private Long creatorId;
+    private User creator;
 
     private String textData;
 
@@ -43,20 +44,20 @@ public class EntryDTO {
         this.entryType = entryType;
     }
 
-    public Long getOwnerId() {
-        return ownerId;
+    public User getOwner() {
+        return owner;
     }
 
-    public void setOwnerId(Long ownerId) {
-        this.ownerId = ownerId;
+    public void setOwner(User owner) {
+        this.owner = owner;
     }
 
-    public Long getCreatorId() {
-        return creatorId;
+    public User getCreator() {
+        return creator;
     }
 
-    public void setCreatorId(Long creatorId) {
-        this.creatorId = creatorId;
+    public void setCreator(User creator) {
+        this.creator = creator;
     }
 
     public String getTextData() {

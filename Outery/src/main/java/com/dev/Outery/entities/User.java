@@ -50,7 +50,8 @@ public class User {
     private List<User> followers;
     @ManyToMany()
     private List<User> following;
-    @OneToOne()
+
+    @OneToOne(cascade = CascadeType.ALL)
     private EntryWall userEntries;
 
     public Long getId() {
@@ -165,20 +166,28 @@ public class User {
         this.userRole = userRole;
     }
 
-    public List<User> getFollowers() {
-        return followers;
+//    public List<User> getFollowers() {
+//        return followers;
+//    }
+//
+//    public void setFollowers(List<User> followers) {
+//        this.followers = followers;
+//    }
+//
+//    public List<User> getFollowing() {
+//        return following;
+//    }
+//
+//    public void setFollowing(List<User> following) {
+//        this.following = following;
+//    }
+
+    public void addFollower(User follower){
+        this.followers.add(follower);
     }
 
-    public void setFollowers(List<User> followers) {
-        this.followers = followers;
-    }
-
-    public List<User> getFollowing() {
-        return following;
-    }
-
-    public void setFollowing(List<User> following) {
-        this.following = following;
+    public void addFollowing(User following){
+        this.following.add(following);
     }
 
     public EntryWall getUserEntries() {

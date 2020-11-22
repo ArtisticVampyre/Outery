@@ -17,10 +17,10 @@ public class Entry {
     // Basic entry data
     @Enumerated(EnumType.STRING)
     private EntryType entryType;
-
-    private Long owner;
-
-    private Long creator;
+    @OneToOne
+    private User owner;
+    @OneToOne
+    private User creator;
     private String textData;
     @Temporal(TemporalType.TIMESTAMP)
     private Date postTime;
@@ -46,19 +46,19 @@ public class Entry {
         this.entryType = entryType;
     }
 
-    public Long getOwner() {
+    public User getOwner() {
         return owner;
     }
 
-    public void setOwner(Long owner) {
+    public void setOwner(User owner) {
         this.owner = owner;
     }
 
-    public Long getCreator() {
+    public User getCreator() {
         return creator;
     }
 
-    public void setCreator(Long creator) {
+    public void setCreator(User creator) {
         this.creator = creator;
     }
 
