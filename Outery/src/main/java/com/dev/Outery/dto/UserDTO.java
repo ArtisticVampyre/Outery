@@ -41,14 +41,13 @@ public class UserDTO {
     private UserRole userRole;
 
     // Link Data
-    private List<User> followers;
+    private List<UserDTO> followers;
 
-    private List<User> following;
+    private List<UserDTO> following;
 
-    private EntryWall userEntries;
+    private EntryWallDTO userEntries;
 
-    private EntryWall userWall;
-
+    private EntryWallDTO userWall;
 
     public Long getId() {
         return id;
@@ -162,35 +161,35 @@ public class UserDTO {
         this.userRole = userRole;
     }
 
-    public List<User> getFollowers() {
+    public List<UserDTO> getFollowers() {
         return followers;
     }
 
-    public void setFollowers(List<User> followers) {
+    public void setFollowers(List<UserDTO> followers) {
         this.followers = followers;
     }
 
-    public List<User> getFollowing() {
+    public List<UserDTO> getFollowing() {
         return following;
     }
 
-    public void setFollowing(List<User> following) {
+    public void setFollowing(List<UserDTO> following) {
         this.following = following;
     }
 
-    public EntryWall getUserEntries() {
+    public EntryWallDTO getUserEntries() {
         return userEntries;
     }
 
-    public void setUserEntries(EntryWall userEntries) {
+    public void setUserEntries(EntryWallDTO userEntries) {
         this.userEntries = userEntries;
     }
 
-    public EntryWall getUserWall() {
+    public EntryWallDTO getUserWall() {
         return userWall;
     }
 
-    public void setUserWall(EntryWall userWall) {
+    public void setUserWall(EntryWallDTO userWall) {
         this.userWall = userWall;
     }
 }

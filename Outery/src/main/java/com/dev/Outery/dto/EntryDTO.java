@@ -15,18 +15,18 @@ public class EntryDTO {
 
     private EntryType entryType;
 
-    private User owner;
+    private UserDTO owner;
 
-    private User creator;
+    private UserDTO creator;
 
     private String textData;
 
     private Date postTime;
     // Interaction related data
 
-    private List<Entry> comments;
+    private List<EntryDTO> comments;
 
-    private List<EntryReaction> reactions;
+    private List<EntryReactionDTO> reactions;
 
     public Long getId() {
         return id;
@@ -44,19 +44,19 @@ public class EntryDTO {
         this.entryType = entryType;
     }
 
-    public User getOwner() {
+    public UserDTO getOwner() {
         return owner;
     }
 
-    public void setOwner(User owner) {
+    public void setOwner(UserDTO owner) {
         this.owner = owner;
     }
 
-    public User getCreator() {
+    public UserDTO getCreator() {
         return creator;
     }
 
-    public void setCreator(User creator) {
+    public void setCreator(UserDTO creator) {
         this.creator = creator;
     }
 
@@ -76,19 +76,19 @@ public class EntryDTO {
         this.postTime = postTime;
     }
 
-    public List<Entry> getComments() {
+    public List<EntryDTO> getComments() {
         return comments;
     }
 
-    public void setComments(List<Entry> comments) {
+    public void setComments(List<EntryDTO> comments) {
         this.comments = comments;
     }
 
-    public List<EntryReaction> getReactions() {
+    public List<EntryReactionDTO> getReactions() {
         return reactions;
     }
 
-    public void setReactions(List<EntryReaction> reactions) {
+    public void setReactions(List<EntryReactionDTO> reactions) {
         this.reactions = reactions;
     }
 }
